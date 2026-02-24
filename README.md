@@ -1,2 +1,1501 @@
-# befitwithteja
-befitwithteja
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sai Teja Manthena | Strength Coach | Hyderabad</title>
+<meta name="description" content="The strength work that completes your recovery. Coaching in Hyderabad for people whose recovery needs to go further.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400&display=swap" rel="stylesheet">
+<style>
+:root {
+  --gold: #C9A84C;
+  --gold-light: #E8C96A;
+  --gold-dim: #6A5828;
+  --black: #080808;
+  --dark: #111111;
+  --card: #161616;
+  --card2: #1C1C1C;
+  --white: #F5F5F0;
+  --gray: #999999;
+  --light-gray: #CCCCCC;
+  --dim: #2E2E2E;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+
+body {
+  background: var(--black);
+  color: var(--white);
+  font-family: 'Barlow', sans-serif;
+  font-weight: 400;
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+::-webkit-scrollbar { width: 3px; }
+::-webkit-scrollbar-track { background: var(--black); }
+::-webkit-scrollbar-thumb { background: var(--gold); }
+
+/* TOP BAR */
+.top-bar {
+  height: 3px;
+  background: linear-gradient(90deg, var(--gold-dim), var(--gold), var(--gold-dim));
+  position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
+}
+
+/* NAV */
+nav {
+  position: fixed;
+  top: 3px; left: 0; right: 0;
+  z-index: 999;
+  background: rgba(8,8,8,0.97);
+  border-bottom: 1px solid var(--dim);
+  backdrop-filter: blur(12px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 14px 60px 0;
+}
+
+.nav-logo {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 22px;
+  letter-spacing: 6px;
+  color: var(--gold);
+  cursor: pointer;
+  padding-bottom: 10px;
+}
+
+.nav-links {
+  display: flex;
+  width: 100%;
+  list-style: none;
+  justify-content: space-evenly;
+  border-top: 1px solid var(--dim);
+  margin: 0; padding: 0;
+}
+
+.nav-links li { flex: 1; text-align: center; }
+
+.nav-links li a {
+  display: block;
+  padding: 14px 10px;
+  color: var(--gray);
+  text-decoration: none;
+  font-size: 11px;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  font-weight: 600;
+  transition: color 0.3s;
+  position: relative;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.nav-links li a::after {
+  content: '';
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  height: 2px;
+  background: var(--gold);
+  transform: scaleX(0);
+  transition: transform 0.3s;
+}
+
+.nav-links li a:hover { color: var(--white); }
+.nav-links li a:hover::after { transform: scaleX(1); }
+.nav-links li a.active { color: var(--gold); }
+.nav-links li a.active::after { transform: scaleX(1); }
+
+.nav-cta {
+  background: var(--gold) !important;
+  color: var(--black) !important;
+  font-weight: 700 !important;
+}
+.nav-cta:hover { background: var(--gold-light) !important; color: var(--black) !important; }
+.nav-cta::after { display: none !important; }
+
+/* PAGES */
+.page { display: none; padding-top: 100px; min-height: 100vh; }
+.page.active { display: block; }
+
+/* BUTTONS */
+.btn-gold {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: var(--gold);
+  color: var(--black);
+  padding: 15px 32px;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+  font-family: 'Barlow', sans-serif;
+  transition: background 0.3s, transform 0.2s;
+}
+.btn-gold:hover { background: var(--gold-light); transform: translateY(-2px); }
+
+.btn-outline {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: transparent;
+  color: var(--gold);
+  padding: 14px 32px;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  text-decoration: none;
+  border: 1px solid var(--gold-dim);
+  cursor: pointer;
+  font-family: 'Barlow', sans-serif;
+  transition: border-color 0.3s, background 0.3s;
+}
+.btn-outline:hover { border-color: var(--gold); background: rgba(201,168,76,0.07); }
+
+/* SECTION LABELS */
+.s-tag {
+  font-size: 11px;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: var(--gold);
+  font-weight: 600;
+  margin-bottom: 12px;
+  display: block;
+}
+
+.s-title {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(40px, 5.5vw, 68px);
+  line-height: 0.92;
+  letter-spacing: 2px;
+}
+.s-title em { color: var(--gold); font-style: normal; }
+.s-rule { width: 50px; height: 3px; background: var(--gold); margin: 20px 0 0; }
+
+/* ═══════════════════════════════
+   HOME PAGE
+═══════════════════════════════ */
+
+/* HERO */
+.home-hero {
+  min-height: calc(100vh - 100px);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  padding: 60px 60px;
+  gap: 60px;
+  position: relative;
+  overflow: hidden;
+}
+
+.home-hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse at 70% 50%, rgba(201,168,76,0.04) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+/* CLIENT PROBLEM — the hero of the story */
+.hero-client-problem {
+  font-size: 13px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--gray);
+  font-weight: 500;
+  margin-bottom: 28px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+.hero-client-problem::before {
+  content: '';
+  width: 32px; height: 1px;
+  background: var(--gold);
+  flex-shrink: 0;
+}
+
+.hero-name {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(56px, 7.5vw, 100px);
+  line-height: 0.88;
+  letter-spacing: 2px;
+  margin-bottom: 20px;
+}
+.hero-name em { color: var(--gold); font-style: normal; }
+
+.hero-tagline {
+  font-size: clamp(15px, 1.8vw, 20px);
+  color: var(--light-gray);
+  letter-spacing: 1px;
+  margin-bottom: 32px;
+  font-weight: 300;
+  border-left: 2px solid var(--gold);
+  padding-left: 18px;
+  line-height: 1.6;
+}
+
+.hero-client-statement {
+  font-size: 15px;
+  color: var(--gray);
+  line-height: 1.9;
+  max-width: 480px;
+  font-weight: 300;
+  margin-bottom: 40px;
+}
+
+.hero-client-statement strong {
+  color: var(--white);
+  font-weight: 500;
+}
+
+.hero-btns { display: flex; gap: 16px; flex-wrap: wrap; }
+
+/* HERO IMAGE */
+.hero-img-col {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.hero-img-wrap {
+  position: relative;
+  width: 100%;
+  max-width: 420px;
+}
+
+.hero-img-wrap::before {
+  content: '';
+  position: absolute;
+  top: -14px; right: -14px;
+  bottom: 14px; left: 14px;
+  border: 1px solid var(--gold-dim);
+  z-index: 0;
+}
+
+.hero-img-placeholder {
+  width: 100%;
+  height: 560px;
+  background: var(--card);
+  border: 1px solid var(--dim);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  position: relative;
+  z-index: 1;
+}
+
+.hero-img-placeholder span {
+  font-size: 10px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--dim);
+}
+
+.hero-img-wrap img {
+  width: 100%;
+  height: 560px;
+  object-fit: cover;
+  object-position: center top;
+  display: block;
+  position: relative;
+  z-index: 1;
+  filter: grayscale(10%);
+}
+
+/* STATS STRIP */
+.stats-strip {
+  background: var(--card);
+  border-top: 1px solid var(--gold-dim);
+  border-bottom: 1px solid var(--dim);
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.stat-box {
+  padding: 32px 20px;
+  text-align: center;
+  border-right: 1px solid var(--dim);
+  transition: background 0.3s;
+}
+.stat-box:last-child { border-right: none; }
+.stat-box:hover { background: var(--card2); }
+
+.stat-num {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 46px;
+  color: var(--gold);
+  line-height: 1;
+  letter-spacing: 2px;
+}
+.stat-lbl {
+  font-size: 10px;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  color: var(--gray);
+  margin-top: 6px;
+  font-weight: 500;
+}
+
+/* HOME — WHO IS THIS FOR */
+.home-for {
+  padding: 80px 60px;
+  background: var(--dark);
+}
+
+.for-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: start;
+  margin-top: 50px;
+}
+
+.for-text p {
+  font-size: 16px;
+  color: var(--light-gray);
+  line-height: 1.95;
+  font-weight: 300;
+  margin-bottom: 20px;
+}
+
+.for-text p strong { color: var(--white); font-weight: 600; }
+
+.for-situations {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.for-situation-item {
+  background: var(--card);
+  border: 1px solid var(--dim);
+  border-left: 3px solid var(--gold-dim);
+  padding: 20px 24px;
+  transition: border-left-color 0.3s;
+}
+.for-situation-item:hover { border-left-color: var(--gold); }
+
+.for-situation-item p {
+  font-size: 14px;
+  color: var(--light-gray);
+  line-height: 1.7;
+  font-weight: 300;
+}
+
+.for-situation-item p strong {
+  color: var(--white);
+  font-weight: 600;
+  display: block;
+  font-size: 13px;
+  letter-spacing: 1px;
+  margin-bottom: 4px;
+}
+
+/* HOME — CASE PREVIEWS */
+.home-cases {
+  padding: 80px 60px;
+}
+
+.cases-preview-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  margin: 50px 0 40px;
+}
+
+.case-preview {
+  background: var(--card);
+  border: 1px solid var(--dim);
+  padding: 36px 30px;
+  position: relative;
+  overflow: hidden;
+  transition: border-color 0.3s, transform 0.3s;
+  cursor: pointer;
+}
+.case-preview:hover { border-color: var(--gold-dim); transform: translateY(-4px); }
+
+.case-preview-num {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 90px;
+  color: rgba(201,168,76,0.05);
+  position: absolute;
+  top: -15px; right: 10px;
+  line-height: 1;
+  pointer-events: none;
+}
+
+.case-preview-tag {
+  font-size: 10px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--gold);
+  font-weight: 600;
+  margin-bottom: 10px;
+  display: block;
+}
+
+.case-preview-title {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 24px;
+  letter-spacing: 1px;
+  margin-bottom: 16px;
+  line-height: 1.1;
+}
+
+.case-preview-line { height: 1px; background: var(--dim); margin-bottom: 18px; }
+
+.case-preview-summary {
+  font-size: 14px;
+  color: var(--gray);
+  line-height: 1.8;
+  font-weight: 300;
+  margin-bottom: 24px;
+}
+
+.case-preview-result {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 12px;
+  color: var(--gold);
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+.case-preview-result::before {
+  content: '';
+  width: 20px; height: 1px;
+  background: var(--gold);
+}
+
+/* HOME — SERVICES */
+.home-services { padding: 80px 60px; background: var(--dark); }
+
+.services-row {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1px;
+  background: var(--dim);
+  border: 1px solid var(--dim);
+  margin-top: 50px;
+}
+
+.service-box {
+  background: var(--black);
+  padding: 40px 28px;
+  transition: background 0.3s;
+}
+.service-box:hover { background: var(--card); }
+
+.service-box-num {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 42px;
+  color: var(--gold-dim);
+  line-height: 1;
+  margin-bottom: 14px;
+}
+
+.service-box-name {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 20px;
+  letter-spacing: 1px;
+  margin-bottom: 12px;
+  line-height: 1.1;
+}
+
+.service-box-desc {
+  font-size: 13px;
+  color: var(--gray);
+  line-height: 1.8;
+  font-weight: 300;
+}
+
+/* ═══════════════════════════════
+   ABOUT PAGE
+═══════════════════════════════ */
+.about-hero {
+  background: var(--dark);
+  padding: 70px 60px 60px;
+  border-bottom: 1px solid var(--dim);
+}
+
+.about-intro {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: start;
+}
+
+.about-body p {
+  font-size: 15px;
+  color: var(--light-gray);
+  line-height: 1.95;
+  margin-bottom: 20px;
+  font-weight: 300;
+}
+.about-body p strong { color: var(--white); font-weight: 600; }
+.about-body p em { color: var(--gold); font-style: italic; }
+
+.pull-quote {
+  background: var(--card);
+  border-left: 3px solid var(--gold);
+  padding: 26px 30px;
+  margin: 28px 0;
+}
+.pull-quote p {
+  font-size: 17px !important;
+  font-style: italic;
+  color: var(--light-gray) !important;
+  margin: 0 !important;
+  line-height: 1.7 !important;
+}
+
+.about-photo-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+.about-photo {
+  background: var(--card);
+  border: 1px solid var(--dim);
+  overflow: hidden;
+}
+.about-photo-placeholder {
+  width: 100%;
+  height: 260px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--dim);
+  font-size: 10px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+.about-photo.tall .about-photo-placeholder { height: 532px; }
+
+/* CREDENTIALS */
+.credentials-section { padding: 80px 60px; }
+
+.creds-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  margin-top: 50px;
+}
+
+.cred-item {
+  background: var(--card);
+  border: 1px solid var(--dim);
+  padding: 30px 26px;
+  position: relative;
+  transition: border-color 0.3s, transform 0.3s;
+}
+.cred-item:hover { border-color: var(--gold-dim); transform: translateY(-3px); }
+.cred-item::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0;
+  width: 3px; height: 100%;
+  background: var(--gold);
+}
+
+.cred-icon { font-size: 24px; margin-bottom: 12px; display: block; }
+.cred-name {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 19px;
+  letter-spacing: 1.5px;
+  margin-bottom: 10px;
+}
+.cred-detail { font-size: 13px; color: var(--gray); line-height: 1.7; }
+.cred-pill {
+  display: inline-block;
+  margin-top: 12px;
+  font-size: 9px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--gold);
+  border: 1px solid var(--gold-dim);
+  padding: 4px 10px;
+  font-weight: 600;
+}
+
+/* CERTS */
+.certs-section { padding: 0 60px 80px; background: var(--dark); }
+
+.certs-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+  margin-top: 50px;
+}
+
+.cert-tile {
+  border: 1px solid var(--dim);
+  overflow: hidden;
+  background: var(--card);
+  transition: border-color 0.3s;
+}
+.cert-tile:hover { border-color: var(--gold-dim); }
+
+.cert-tile-img {
+  height: 180px;
+  background: var(--card2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--dim);
+  font-size: 10px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.cert-tile-label {
+  padding: 12px 14px;
+  font-size: 11px;
+  letter-spacing: 0.5px;
+  color: var(--gray);
+  line-height: 1.5;
+}
+
+/* ═══════════════════════════════
+   CASE STUDIES PAGE
+═══════════════════════════════ */
+.cases-page-header {
+  padding: 70px 60px 50px;
+  background: var(--dark);
+  border-bottom: 1px solid var(--dim);
+}
+
+.cases-page-header .intro-text {
+  font-size: 16px;
+  color: var(--gray);
+  max-width: 680px;
+  line-height: 1.9;
+  font-weight: 300;
+  margin-top: 24px;
+}
+
+.cases-full { padding: 60px; }
+
+.case-full-card {
+  background: var(--card);
+  border: 1px solid var(--dim);
+  margin-bottom: 40px;
+  overflow: hidden;
+  transition: border-color 0.3s;
+}
+.case-full-card:hover { border-color: var(--gold-dim); }
+
+.case-full-header {
+  background: var(--card2);
+  padding: 36px 44px;
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  gap: 30px;
+  border-bottom: 1px solid var(--dim);
+}
+
+.case-full-num {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 68px;
+  color: var(--gold);
+  line-height: 1;
+}
+
+.case-full-tag {
+  font-size: 10px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--gold);
+  font-weight: 600;
+  margin-bottom: 8px;
+  display: block;
+}
+
+.case-full-title {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 34px;
+  letter-spacing: 1px;
+  line-height: 1;
+}
+
+.case-full-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  text-align: right;
+}
+.case-full-meta-item { font-size: 12px; color: var(--gray); }
+.case-full-meta-item strong {
+  display: block;
+  font-size: 9px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--gold-dim);
+  margin-bottom: 2px;
+  font-weight: 600;
+}
+
+.case-full-body {
+  padding: 44px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 50px;
+}
+
+.case-col h4 {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 16px;
+  letter-spacing: 3px;
+  color: var(--gold);
+  margin-bottom: 16px;
+}
+
+.case-col p {
+  font-size: 15px;
+  color: var(--light-gray);
+  line-height: 1.9;
+  font-weight: 300;
+  margin-bottom: 18px;
+}
+
+.case-insight {
+  background: var(--card2);
+  border-left: 3px solid var(--gold);
+  padding: 22px 26px;
+  margin: 20px 0;
+}
+.case-insight p {
+  font-size: 16px !important;
+  font-style: italic;
+  color: var(--white) !important;
+  margin: 0 !important;
+  line-height: 1.7 !important;
+}
+
+.case-outcome-box {
+  background: rgba(201,168,76,0.05);
+  border: 1px solid var(--gold-dim);
+  padding: 26px 28px;
+  margin-top: 20px;
+}
+.case-outcome-box h4 { margin-bottom: 12px; }
+.case-outcome-box p { font-style: italic; margin: 0 !important; }
+
+/* ═══════════════════════════════
+   CONTACT PAGE
+═══════════════════════════════ */
+.contact-page {
+  padding: 80px 60px;
+  min-height: calc(100vh - 100px);
+}
+
+.contact-inner {
+  max-width: 860px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.contact-statement {
+  font-size: 17px;
+  color: var(--gray);
+  line-height: 1.9;
+  font-weight: 300;
+  max-width: 620px;
+  margin: 28px auto 50px;
+}
+
+.contact-main-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 14px;
+  background: var(--gold);
+  color: var(--black);
+  padding: 20px 50px;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  text-decoration: none;
+  font-family: 'Barlow', sans-serif;
+  transition: background 0.3s, transform 0.3s, box-shadow 0.3s;
+  margin-bottom: 50px;
+}
+.contact-main-btn:hover {
+  background: var(--gold-light);
+  transform: translateY(-3px);
+  box-shadow: 0 20px 40px rgba(201,168,76,0.18);
+}
+
+.contact-info-row {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  margin-bottom: 50px;
+}
+
+.contact-info-box {
+  background: var(--card);
+  border: 1px solid var(--dim);
+  padding: 32px 20px;
+  transition: border-color 0.3s;
+}
+.contact-info-box:hover { border-color: var(--gold-dim); }
+
+.contact-info-icon { font-size: 28px; margin-bottom: 12px; }
+.contact-info-label {
+  font-size: 10px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--gold);
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+.contact-info-value { font-size: 14px; color: var(--light-gray); line-height: 1.6; }
+
+.contact-who {
+  background: var(--card);
+  border: 1px solid var(--dim);
+  padding: 44px;
+  text-align: left;
+}
+.contact-who h3 {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 26px;
+  letter-spacing: 3px;
+  color: var(--gold);
+  margin-bottom: 18px;
+}
+.contact-who p {
+  font-size: 15px;
+  color: var(--light-gray);
+  line-height: 1.9;
+  font-weight: 300;
+  margin-bottom: 16px;
+}
+.contact-who ul {
+  list-style: none;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin-top: 8px;
+}
+.contact-who ul li {
+  font-size: 14px;
+  color: var(--gray);
+  padding-left: 20px;
+  position: relative;
+  line-height: 1.6;
+}
+.contact-who ul li::before {
+  content: '—';
+  position: absolute;
+  left: 0;
+  color: var(--gold);
+  font-size: 12px;
+}
+
+/* FOOTER */
+footer {
+  background: var(--dark);
+  border-top: 1px solid var(--dim);
+  padding: 32px 60px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+.footer-logo {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 18px;
+  letter-spacing: 4px;
+  color: var(--gold);
+}
+.footer-copy { font-size: 12px; color: var(--dim); letter-spacing: 1px; }
+.footer-ig a {
+  color: var(--gray);
+  text-decoration: none;
+  font-size: 12px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  transition: color 0.3s;
+  font-weight: 600;
+}
+.footer-ig a:hover { color: var(--gold); }
+
+/* ANIMATIONS */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.fu1 { animation: fadeUp 0.6s ease 0.0s both; }
+.fu2 { animation: fadeUp 0.6s ease 0.1s both; }
+.fu3 { animation: fadeUp 0.6s ease 0.2s both; }
+.fu4 { animation: fadeUp 0.6s ease 0.3s both; }
+.fu5 { animation: fadeUp 0.6s ease 0.4s both; }
+
+/* RESPONSIVE */
+@media (max-width: 960px) {
+  nav { padding: 10px 16px 0; }
+  .nav-links li a { padding: 12px 4px; font-size: 9px; letter-spacing: 1px; }
+
+  .home-hero { grid-template-columns: 1fr; padding: 40px 24px; gap: 0; }
+  .hero-img-col { display: none; }
+
+  .stats-strip { grid-template-columns: repeat(2, 1fr); }
+  .stat-box { border-bottom: 1px solid var(--dim); }
+
+  .home-for, .home-cases, .home-services { padding: 60px 24px; }
+  .for-grid { grid-template-columns: 1fr; gap: 30px; }
+  .cases-preview-grid { grid-template-columns: 1fr; }
+  .services-row { grid-template-columns: 1fr 1fr; }
+
+  .about-hero { padding: 60px 24px; }
+  .about-intro { grid-template-columns: 1fr; gap: 40px; }
+  .about-photo-grid { grid-template-columns: 1fr 1fr; }
+  .about-photo.tall .about-photo-placeholder { height: 260px; }
+
+  .credentials-section { padding: 60px 24px; }
+  .creds-grid { grid-template-columns: 1fr; }
+  .certs-section { padding: 0 24px 60px; }
+  .certs-grid { grid-template-columns: repeat(2, 1fr); }
+
+  .cases-page-header { padding: 60px 24px 40px; }
+  .cases-full { padding: 30px 24px; }
+  .case-full-header { grid-template-columns: auto 1fr; padding: 24px; gap: 16px; }
+  .case-full-meta { display: none; }
+  .case-full-body { grid-template-columns: 1fr; padding: 28px 24px; gap: 24px; }
+
+  .contact-page { padding: 60px 24px; }
+  .contact-info-row { grid-template-columns: 1fr; }
+  .contact-who { padding: 28px 24px; }
+  .contact-who ul { grid-template-columns: 1fr; }
+
+  footer { padding: 24px; flex-direction: column; text-align: center; }
+}
+</style>
+</head>
+<body>
+
+<div class="top-bar"></div>
+
+<nav>
+  <span class="nav-logo" onclick="showPage('home')">BEFITWITHTEJA</span>
+  <ul class="nav-links">
+    <li><a href="#" class="active" onclick="showPage('home');return false;" id="nav-home">Home</a></li>
+    <li><a href="#" onclick="showPage('about');return false;" id="nav-about">About & Credentials</a></li>
+    <li><a href="#" onclick="showPage('cases');return false;" id="nav-cases">Case Studies</a></li>
+    <li><a href="#" onclick="showPage('contact');return false;" id="nav-contact" class="nav-cta">Contact</a></li>
+  </ul>
+</nav>
+
+<!-- ═══════════ HOME ═══════════ -->
+<div id="page-home" class="page active">
+
+  <div class="home-hero">
+    <div>
+      <!-- ALL THREE PILLARS -->
+      <div class="hero-client-problem fu1">
+        Strength Coach — Hyderabad
+      </div>
+
+      <h1 class="hero-name fu2">SAI TEJA<br><em>MANTHENA</em></h1>
+
+      <div class="hero-tagline fu3">
+        The strength work that completes your recovery.<br>
+        The training that makes athletes perform.<br>
+        The programme that changes your body.
+      </div>
+
+      <p class="hero-client-statement fu4">
+        Whether you are recovering from injury, competing in your sport, or working towards a body composition goal — <strong>I build the strength programme that gets you there.</strong> Not a template. Built specifically for you.
+      </p>
+
+      <div class="hero-btns fu5">
+        <a href="https://wa.me/917893693528?text=Hi%20Sai%20Teja%2C%20I%20found%20your%20website%20and%20would%20like%20to%20enquire%20about%20coaching." class="btn-gold" target="_blank">💬 WhatsApp Me</a>
+        <button class="btn-outline" onclick="showPage('cases')">Read Case Studies →</button>
+      </div>
+    </div>
+
+    <div class="hero-img-col">
+      <div class="hero-img-wrap">
+        <div class="hero-img-placeholder">
+          <span>Coaching photo</span>
+          <span style="font-size:9px;color:var(--dim);">Replace with your image</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- STATS -->
+  <div class="stats-strip">
+    <div class="stat-box">
+      <div class="stat-num">3+</div>
+      <div class="stat-lbl">Years Coaching</div>
+    </div>
+    <div class="stat-box">
+      <div class="stat-num">90%</div>
+      <div class="stat-lbl">Client Retention 2+ Yrs</div>
+    </div>
+    <div class="stat-box">
+      <div class="stat-num">WPC</div>
+      <div class="stat-lbl">National Referee</div>
+    </div>
+    <div class="stat-box">
+      <div class="stat-num">L4</div>
+      <div class="stat-lbl">NSQF — Govt of India</div>
+    </div>
+  </div>
+
+  <!-- WHO THIS IS FOR -->
+  <div class="home-for">
+    <div class="section-header">
+      <span class="s-tag">Is This You?</span>
+      <h2 class="s-title">ONE COACH.<br><em>THREE DIFFERENT GOALS.</em></h2>
+      <div class="s-rule"></div>
+    </div>
+
+    <div class="for-grid">
+      <div class="for-text">
+        <p>I work with three types of people. <strong>Athletes who compete</strong> — badminton players, go-kart racing drivers, powerlifters — who need sport-specific strength work built around exactly what their sport demands of their body. <strong>People rebuilding after injury</strong> — who have been through the medical route and need the strength work that completes the recovery. And <strong>people with a body composition goal</strong> — who want to lose fat while building real strength, not just lose weight.</p>
+        <p>What all three have in common — they want a programme built specifically for them. Not a template. A coach who understands their situation before prescribing anything. I assess first. I listen first. The programme comes after.</p>
+      </div>
+
+      <div class="for-situations">
+        <div class="for-situation-item">
+          <p><strong>Competitive athletes — badminton, go-kart, powerlifting</strong>I train a national level badminton player, a go-kart racing athlete, and multiple powerlifters. Strength built specifically around what your sport demands — speed, stability, force production, endurance under load. I referee at WPC competitions. I know what competition requires from the inside.</p>
+        </div>
+        <div class="for-situation-item">
+          <p><strong>Body composition & fat loss</strong>Fat loss through strength training — not starvation or endless cardio. A structured programme that changes how your body is composed while keeping you strong, energised, and performing well every session.</p>
+        </div>
+        <div class="for-situation-item">
+          <p><strong>Injury rehabilitation</strong>You have been through the medical route — doctor, physio, rest. Something is still not fully right. Progressive strength work, built carefully around your diagnosis, completes what the medical treatment started.</p>
+        </div>
+        <div class="for-situation-item">
+          <p><strong>Strength as the goal</strong>You want to squat, deadlift, and press — correctly, progressively, with a long term plan. A coach who builds with you week by week, not a programme from the internet.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CASE STUDIES PREVIEW -->
+  <div class="home-cases">
+    <div class="section-header">
+      <span class="s-tag">Real Clients. Real Outcomes.</span>
+      <h2 class="s-title">WHEN THEY CAME<br><em>TO ME.</em></h2>
+      <div class="s-rule"></div>
+    </div>
+
+    <div class="cases-preview-grid">
+      <div class="case-preview" onclick="showPage('cases')">
+        <div class="case-preview-num">01</div>
+        <span class="case-preview-tag">Personal Case</span>
+        <div class="case-preview-title">PIRIFORMIS INJURY — 45 DAYS UNRESOLVED</div>
+        <div class="case-preview-line"></div>
+        <p class="case-preview-summary">Physio, rest, and medication for 45 days — no improvement. The piriformis was not injured. It was compensating for inactive glutes. One question changed everything: not what is hurting, but why.</p>
+        <div class="case-preview-result">Fully Resolved — 3 to 4 Months</div>
+      </div>
+
+      <div class="case-preview" onclick="showPage('cases')">
+        <div class="case-preview-num">02</div>
+        <span class="case-preview-tag">Post Partum Rehabilitation</span>
+        <div class="case-preview-title">8 YEARS OF STRESS INCONTINENCE</div>
+        <div class="case-preview-line"></div>
+        <p class="case-preview-summary">A client had managed this condition silently for 8 years after delivery. Physiotherapy had helped but not resolved it. Targeted pelvic stabiliser strength training completed the recovery in 3 months.</p>
+        <div class="case-preview-result">Zero Symptoms — 2 Years On</div>
+      </div>
+
+      <div class="case-preview" onclick="showPage('cases')">
+        <div class="case-preview-num">03</div>
+        <span class="case-preview-tag">Spine Rehabilitation</span>
+        <div class="case-preview-title">L4–L5 DISC BULGE — BACK TO DEADLIFTS</div>
+        <div class="case-preview-line"></div>
+        <p class="case-preview-summary">Medical diagnosis confirmed. Physiotherapy completed. Pain remained. The posterior chain had never been progressively loaded. Four months of structured strength work completed what the medical route had started.</p>
+        <div class="case-preview-result">Deadlifting Pain Free — 4 Months</div>
+      </div>
+    </div>
+
+    <div style="text-align:center;">
+      <button class="btn-outline" onclick="showPage('cases')">Read Full Case Studies →</button>
+    </div>
+  </div>
+
+  <!-- SERVICES -->
+  <div class="home-services">
+    <div class="section-header">
+      <span class="s-tag">What I Offer</span>
+      <h2 class="s-title">HOW I<br><em>WORK WITH YOU.</em></h2>
+      <div class="s-rule"></div>
+    </div>
+
+    <div class="services-row">
+      <div class="service-box">
+        <div class="service-box-num">01</div>
+        <div class="service-box-name">Injury Rehabilitation Strength</div>
+        <div class="service-box-desc">After your medical treatment is complete, I build the strength system around the area that was affected. Progressive, careful, and specific to your diagnosis.</div>
+      </div>
+      <div class="service-box">
+        <div class="service-box-num">02</div>
+        <div class="service-box-name">Strength & Performance</div>
+        <div class="service-box-desc">For people who want to build real, functional strength. Not aesthetics — a body that performs better at whatever matters to you.</div>
+      </div>
+      <div class="service-box">
+        <div class="service-box-num">03</div>
+        <div class="service-box-name">Body Composition & Fat Loss</div>
+        <div class="service-box-desc">Fat loss done through strength — not starvation. I build programmes that change how your body is composed while keeping you strong, energised, and performing well.</div>
+      </div>
+      <div class="service-box">
+        <div class="service-box-num">04</div>
+        <div class="service-box-name">Sport Specific & Powerlifting</div>
+        <div class="service-box-desc">For competitive athletes. I am a WPC National Referee — I know what competition demands and I build athletes who are ready for it.</div>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <div class="footer-logo">BEFITWITHTEJA</div>
+    <div class="footer-copy">© 2025 Sai Teja Manthena · Hyderabad</div>
+    <div class="footer-ig"><a href="https://instagram.com/befitwithteja" target="_blank">@befitwithteja ↗</a></div>
+  </footer>
+</div>
+
+<!-- ═══════════ ABOUT ═══════════ -->
+<div id="page-about" class="page">
+  <div class="about-hero">
+    <div class="about-intro">
+      <div class="about-body">
+        <span class="s-tag">Your Guide</span>
+        <h2 class="s-title" style="margin-bottom:20px;">WHO I AM<br><em>AND WHY IT MATTERS.</em></h2>
+        <div class="s-rule" style="margin-bottom:30px;"></div>
+
+        <p>I am Sai Teja Manthena — a strength coach based in Hyderabad. I work with competitive athletes, people with body composition goals, and people rebuilding after injury. Three very different clients. One common thread — <strong>every programme I build is specific to that person, that body, and that goal.</strong></p>
+
+        <p>My education started at <strong>K11 School of Fitness Sciences</strong> — one of India's most respected institutions for fitness science. I graduated with a Distinction. K11 changed how I think about the body entirely. Not just exercise prescription — anatomy, biomechanics, special populations, nutrition, how the systems of the body interact. That foundation is what separates a coach from a trainer.</p>
+
+        <p>From there I worked with competitive athletes across different sports. I train a <strong>national level badminton player</strong> — building the rotational strength, shoulder stability, and court endurance that badminton specifically demands. I train a <strong>go-kart racing athlete</strong> — neck and upper back strength, postural endurance under sustained load, the specific physical conditioning that high-speed racing requires. And I coach <strong>multiple powerlifters</strong> — taking athletes from learning the squat, bench, and deadlift correctly all the way to state and national competition. My powerlifting athletes have won gold medals and set state records. A 17-year-old I coached set a deadlift record in his category within 8 months of starting.</p>
+
+        <p>I trained at <strong>One Grip Laboratory in Assam</strong> — one of India's few institutions dedicated exclusively to Olympic weightlifting. The clean and jerk, the snatch — technically the most demanding movements in strength sport. That training gave me a level of movement understanding I bring into every coaching relationship.</p>
+
+        <p>I am also a certified <strong>WPC National Referee</strong> under World Powerlifting Congress India. I judge at competitions across Telangana. I know exactly what judges look for — and I coach my powerlifting athletes accordingly.</p>
+
+        <div class="pull-quote">
+          <p>"I do not build generic programmes. I study the person, study their goal, study how their body moves — and then I build. Strength built correctly changes everything."</p>
+        </div>
+
+        <p>I also went through a significant injury personally — a severe piriformis issue that took 45 days to diagnose correctly after standard treatment failed. That experience gave me a specific understanding of rehabilitation that I bring to clients who are rebuilding. But it is one part of my background, not the definition of it.</p>
+
+        <p>I am currently pursuing <strong>BA Psychology</strong> because I believe coaching is never only about the body. How a person thinks about training, handles setbacks, and builds consistency matters as much as the programme itself.</p>
+      </div>
+
+      <div class="about-photo-grid">
+        <div class="about-photo tall">
+          <div class="about-photo-placeholder" style="height:532px;">India Blazer Photo</div>
+        </div>
+        <div class="about-photo">
+          <div class="about-photo-placeholder">Coaching Photo</div>
+        </div>
+        <div class="about-photo">
+          <div class="about-photo-placeholder">Competition Photo</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CREDENTIALS -->
+  <div class="credentials-section">
+    <span class="s-tag">Qualifications & Recognition</span>
+    <h2 class="s-title">WHAT I<br><em>BRING TO THIS.</em></h2>
+    <div class="s-rule"></div>
+
+    <div class="creds-grid">
+      <div class="cred-item">
+        <span class="cred-icon">🎓</span>
+        <div class="cred-name">NSQF Level 4 — Govt of India</div>
+        <div class="cred-detail">Diploma in Personal Training with Distinction from K11 School of Fitness Sciences, Pune. Recognised by Ministry of Skill Development, Skill India, NSDC, REPS India, and PD:Approval. Awarded January 2023.</div>
+        <span class="cred-pill">K11 — Distinction</span>
+      </div>
+      <div class="cred-item">
+        <span class="cred-icon">⚖️</span>
+        <div class="cred-name">WPC National Referee</div>
+        <div class="cred-detail">Certified National Referee under World Powerlifting Congress India. Reg No: 2024/18/IV/189. Signed by WPC India President Daljith Singh and WPC Telangana President Inturi Rekha.</div>
+        <span class="cred-pill">WPC India — Official</span>
+      </div>
+      <div class="cred-item">
+        <span class="cred-icon">🏋️</span>
+        <div class="cred-name">Olympic Weightlifting</div>
+        <div class="cred-detail">Trained at One Grip Laboratory, Assam — one of India's few institutions dedicated exclusively to Olympic weightlifting. Clean & jerk and snatch biomechanics at elite technical level.</div>
+        <span class="cred-pill">One Grip Laboratory</span>
+      </div>
+      <div class="cred-item">
+        <span class="cred-icon">🧠</span>
+        <div class="cred-name">BA Psychology — In Progress</div>
+        <div class="cred-detail">Currently pursuing a Bachelor of Arts in Psychology to understand behaviour, motivation, and the mind-body connection in rehabilitation and performance coaching.</div>
+        <span class="cred-pill">Ongoing — 2025</span>
+      </div>
+      <div class="cred-item">
+        <span class="cred-icon">🫀</span>
+        <div class="cred-name">CPR & AED Certified</div>
+        <div class="cred-detail">Certified in Cardiopulmonary Resuscitation and Automated External Defibrillator use by Australian Life Saving Academy, NSW. International Life Saving Federation standard.</div>
+        <span class="cred-pill">ILS Standard</span>
+      </div>
+      <div class="cred-item">
+        <span class="cred-icon">📋</span>
+        <div class="cred-name">REPS India Registered</div>
+        <div class="cred-detail">Registered Exercise Professional under REPS India — affiliated to the International Confederation of Registers for Exercise Professionals (ICREPs). Category A: Personal Trainer. Member ID: REPSIN005482.</div>
+        <span class="cred-pill">ICREPs International</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- CERTIFICATES -->
+  <div class="certs-section">
+    <span class="s-tag" style="padding-top:80px;display:block;">Certificate Gallery</span>
+    <h2 class="s-title">THE<br><em>DOCUMENTS.</em></h2>
+    <div class="s-rule"></div>
+    <div class="certs-grid">
+      <div class="cert-tile"><div class="cert-tile-img">K11 Diploma</div><div class="cert-tile-label">K11 School of Fitness Sciences — Diploma in Personal Training — Distinction</div></div>
+      <div class="cert-tile"><div class="cert-tile-img">NSQF Level 4</div><div class="cert-tile-label">Government of India — NSQF Level 4 Fitness Trainer</div></div>
+      <div class="cert-tile"><div class="cert-tile-img">WPC Referee</div><div class="cert-tile-label">World Powerlifting Congress India — National Referee Reg 2024/18/IV/189</div></div>
+      <div class="cert-tile"><div class="cert-tile-img">REPS India</div><div class="cert-tile-label">REPS India / ICREPs International — Registered Exercise Professional</div></div>
+      <div class="cert-tile"><div class="cert-tile-img">CPR Certified</div><div class="cert-tile-label">Australian Life Saving Academy NSW — Cardio Pulmonary Resuscitation</div></div>
+      <div class="cert-tile"><div class="cert-tile-img">AED Certified</div><div class="cert-tile-label">Australian Life Saving Academy NSW — Automated External Defibrillator</div></div>
+      <div class="cert-tile"><div class="cert-tile-img">PD Approval</div><div class="cert-tile-label">PD:Approval Quality Recognition — Certificate of Achievement</div></div>
+      <div class="cert-tile"><div class="cert-tile-img">K11 Scholarship</div><div class="cert-tile-label">K11 Meritorious Scholarship — INR 20,000 — Awarded January 2023</div></div>
+    </div>
+  </div>
+
+  <footer>
+    <div class="footer-logo">BEFITWITHTEJA</div>
+    <div class="footer-copy">© 2025 Sai Teja Manthena · Hyderabad</div>
+    <div class="footer-ig"><a href="https://instagram.com/befitwithteja" target="_blank">@befitwithteja ↗</a></div>
+  </footer>
+</div>
+
+<!-- ═══════════ CASE STUDIES ═══════════ -->
+<div id="page-cases" class="page">
+  <div class="cases-page-header">
+    <span class="s-tag">Real Clients. Real Outcomes.</span>
+    <h2 class="s-title">CASE<br><em>STUDIES.</em></h2>
+    <div class="s-rule"></div>
+    <p class="intro-text">These are three cases written in my own words. In each one, a client had already been through the right medical steps. The doctor was correct. The physiotherapist was correct. There was simply more work to be done — and strength training was that work. I made no promises in any of these cases. I said I would not make things worse. Strength built — everything else followed.</p>
+  </div>
+
+  <div class="cases-full">
+
+    <!-- CASE 1 -->
+    <div class="case-full-card">
+      <div class="case-full-header">
+        <div class="case-full-num">01</div>
+        <div>
+          <span class="case-full-tag">Personal Case Study</span>
+          <div class="case-full-title">MY OWN PIRIFORMIS INJURY</div>
+        </div>
+        <div class="case-full-meta">
+          <div class="case-full-meta-item"><strong>Subject</strong>Myself — Age 27</div>
+          <div class="case-full-meta-item"><strong>Prior Treatment</strong>Physio, Rest, Medication</div>
+          <div class="case-full-meta-item"><strong>Timeline</strong>45 days unresolved → 3–4 months recovery</div>
+        </div>
+      </div>
+      <div class="case-full-body">
+        <div class="case-col">
+          <h4>WHAT HAPPENED</h4>
+          <p>15 days after completing my diploma at K11, I had a severe piriformis injury. I could not sit or sleep properly. I went through the correct route — physiotherapy, full rest, medication, specific exercises. 45 days of doing everything right. No improvement.</p>
+          <p>The physio had correctly identified the piriformis as the source of pain. The treatment was appropriate for an injured muscle. But the muscle was not injured. It was the only muscle working in a system where the glutes had essentially stopped contributing.</p>
+          <div class="case-insight">
+            <p>"I stopped asking what was hurting and asked why it was overloaded. That question took me somewhere completely different — and it was the right place."</p>
+          </div>
+          <p>I did a full bodyweight squat. No pain. The piriformis was compensating for underactive gluteus maximus, medius, and minimus. Treating the piriformis was treating the wrong target. The problem was the system around it.</p>
+        </div>
+        <div class="case-col">
+          <h4>THE PROGRAMME</h4>
+          <p>I built a programme around progressive glute activation. Step ups with bodyweight, then added load. Hip thrusts. Single leg work to build each side independently. Mobility alongside — not as a cooldown but as a training tool for the hip rotators.</p>
+          <p>I did all of this while coaching my first client 20 kilometres away — travelling each day in significant pain. I never mentioned it to him. The coaching happened. The rehabilitation happened. Both simultaneously.</p>
+          <p>Progress from day one. Every session slightly better than the last. The piriformis stopped being overloaded as the muscles around it began sharing the work. Full recovery in 3 to 4 months.</p>
+          <div class="case-outcome-box">
+            <h4>OUTCOME</h4>
+            <p>Complete resolution. No recurrence. The assessment framework this gave me — looking for the overloaded compensator rather than treating the symptomatic muscle — became the foundation of how I approach every rehabilitation case since.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- CASE 2 -->
+    <div class="case-full-card">
+      <div class="case-full-header">
+        <div class="case-full-num">02</div>
+        <div>
+          <span class="case-full-tag">Client Case — Post Partum</span>
+          <div class="case-full-title">8 YEARS. STRENGTH COMPLETED THE RECOVERY.</div>
+        </div>
+        <div class="case-full-meta">
+          <div class="case-full-meta-item"><strong>Client</strong>Female, 38 years</div>
+          <div class="case-full-meta-item"><strong>Condition</strong>Post Partum Stress Urinary Incontinence</div>
+          <div class="case-full-meta-item"><strong>Timeline</strong>8 years managed → resolved in 3 months</div>
+        </div>
+      </div>
+      <div class="case-full-body">
+        <div class="case-col">
+          <h4>HOW IT BEGAN</h4>
+          <p>She came to me for general fitness training after her delivery. On her second session, she told me something she had kept private for 8 years. Since her delivery, any sudden movement caused involuntary urine leakage. She had been managing it — avoiding certain activities, planning carefully.</p>
+          <p>She had been through physiotherapy. The pelvic floor work had helped at the time but had not resolved the condition. She was not coming to me for this problem specifically. She mentioned it because I had asked about her history and she trusted the question was genuine.</p>
+          <div class="case-insight">
+            <p>"The pelvic floor does not work alone. It is part of a system — and the system around it had never been progressively strengthened."</p>
+          </div>
+        </div>
+        <div class="case-col">
+          <h4>THE APPROACH</h4>
+          <p>I told her I would not make anything worse and I would try my best. I explained my thinking — that pelvic stability depends on the gluteus medius, minimus, hamstrings, and adductors working together. The physiotherapy had addressed the pelvic floor in isolation. The surrounding system had not been built up.</p>
+          <p>I built a programme focused on the deep hip stabilisers alongside controlled posterior chain work. Nothing sudden or high impact early. Progressive loading week by week, watching how her body responded.</p>
+          <p>Within three months she was doing jumping jacks, treadmill running, and jumping squats. Zero symptoms. She has continued training for over two years since with no recurrence.</p>
+          <div class="case-outcome-box">
+            <h4>OUTCOME</h4>
+            <p>Complete resolution of a condition she had managed for 8 years. Her physiotherapy had correctly treated the acute phase. Progressive strength training completed what that treatment had started. She recovered activities she had avoided for nearly a decade.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- CASE 3 -->
+    <div class="case-full-card">
+      <div class="case-full-header">
+        <div class="case-full-num">03</div>
+        <div>
+          <span class="case-full-tag">Client Case — Spine</span>
+          <div class="case-full-title">L4–L5 DISC BULGE. STRENGTH COMPLETED THE RECOVERY.</div>
+        </div>
+        <div class="case-full-meta">
+          <div class="case-full-meta-item"><strong>Client</strong>Female — Post Diagnosis</div>
+          <div class="case-full-meta-item"><strong>Condition</strong>L4–L5 Disc Bulge</div>
+          <div class="case-full-meta-item"><strong>Timeline</strong>Post medical treatment → pain free in 4 months</div>
+        </div>
+      </div>
+      <div class="case-full-body">
+        <div class="case-col">
+          <h4>WHERE SHE WAS</h4>
+          <p>She had done everything correctly. Doctor appointment, MRI scan, confirmed L4–L5 disc bulge, physiotherapy programme completed. The medical route had run its course. She still had pain and could not bend forward without discomfort. Daily activities were restricted.</p>
+          <p>In session one I watched her move before I asked questions. The pattern was clear — her lower back was absorbing load that her glutes, hamstrings, and lats were not sharing. The posterior chain was significantly underdeveloped. The spine was under constant pressure because the muscles around it were not doing their job.</p>
+          <div class="case-insight">
+            <p>"The disc does not carry load alone when the surrounding system is strong. It was under pressure because that system had never been progressively built."</p>
+          </div>
+        </div>
+        <div class="case-col">
+          <h4>THE PROGRAMME</h4>
+          <p>Four clear stages over four months. No lumbar flexion early — upper back and lat activation first, building the protective framework before loading the spine. Breathing and bracing from session one.</p>
+          <p>Month two — posterior chain loading. Stiff leg deadlifts with light load and controlled range. The movement pattern that would eventually carry her back to full function, introduced carefully and progressed conservatively.</p>
+          <p>Month three — rack pulls. Partial range conventional deadlift starting above the knee. Load increasing as the pattern became solid and pain-free.</p>
+          <p>Month four — conventional deadlift from the floor. The same movement associated with her original pain. Performed with correct breathing, correct bracing, and full posterior chain engagement. Zero pain.</p>
+          <div class="case-outcome-box">
+            <h4>OUTCOME</h4>
+            <p>Full return to conventional deadlift in 4 months. Pain free. The disc responded when the muscles around it were finally strong enough to share the load. Medical treatment had correctly addressed the acute phase. Strength training completed the recovery.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <footer>
+    <div class="footer-logo">BEFITWITHTEJA</div>
+    <div class="footer-copy">© 2025 Sai Teja Manthena · Hyderabad</div>
+    <div class="footer-ig"><a href="https://instagram.com/befitwithteja" target="_blank">@befitwithteja ↗</a></div>
+  </footer>
+</div>
+
+<!-- ═══════════ CONTACT ═══════════ -->
+<div id="page-contact" class="page">
+  <div class="contact-page">
+    <div class="contact-inner">
+      <span class="s-tag">Take The Next Step</span>
+      <h2 class="s-title" style="font-size:clamp(50px,8vw,90px);margin-bottom:16px;">LET'S<br><em>TALK.</em></h2>
+      <div class="s-rule" style="margin:16px auto 0;"></div>
+      <p class="contact-statement">
+        Whether you are dealing with an injury that has not fully resolved, working towards a body composition goal, training for competition, or simply ready to build real strength — reach out. Tell me where you are. We figure out together whether I can help.
+      </p>
+
+      <a href="https://wa.me/917893693528?text=Hi%20Sai%20Teja%2C%20I%20found%20your%20website%20and%20would%20like%20to%20enquire%20about%20coaching." class="contact-main-btn" target="_blank">
+        💬 &nbsp; Message on WhatsApp
+      </a>
+
+      <div class="contact-info-row">
+        <div class="contact-info-box">
+          <div class="contact-info-icon">📍</div>
+          <div class="contact-info-label">Location</div>
+          <div class="contact-info-value">Tellapur, Hyderabad<br>Telangana 502032</div>
+        </div>
+        <div class="contact-info-box">
+          <div class="contact-info-icon">📧</div>
+          <div class="contact-info-label">Email</div>
+          <div class="contact-info-value">saitejamanthena26<br>@gmail.com</div>
+        </div>
+        <div class="contact-info-box">
+          <div class="contact-info-icon">📱</div>
+          <div class="contact-info-label">Instagram</div>
+          <div class="contact-info-value"><a href="https://instagram.com/befitwithteja" target="_blank" style="color:var(--gold);text-decoration:none;">@befitwithteja ↗</a></div>
+        </div>
+      </div>
+
+      <div class="contact-who">
+        <h3>WHO SHOULD REACH OUT</h3>
+        <p>I work with people who have a real problem and are committed to solving it properly. Every client gets a programme built specifically for them — not a template, not a generic plan.</p>
+        <ul>
+          <li>People with injuries physio has not fully resolved</li>
+          <li>People looking for structured fat loss through strength</li>
+          <li>Anyone whose pain keeps returning after rest</li>
+          <li>Competitive powerlifters preparing for WPC events</li>
+          <li>Young athletes building a foundation in strength sports</li>
+          <li>Working professionals who want results, not routines</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <div class="footer-logo">BEFITWITHTEJA</div>
+    <div class="footer-copy">© 2025 Sai Teja Manthena · Hyderabad</div>
+    <div class="footer-ig"><a href="https://instagram.com/befitwithteja" target="_blank">@befitwithteja ↗</a></div>
+  </footer>
+</div>
+
+<script>
+function showPage(name) {
+  document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+  document.getElementById('page-' + name).classList.add('active');
+  document.querySelectorAll('.nav-links a').forEach(a => a.classList.remove('active'));
+  const el = document.getElementById('nav-' + name);
+  if (el) el.classList.add('active');
+  window.scrollTo(0, 0);
+}
+
+// Fade in on scroll
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      e.target.style.opacity = '1';
+      e.target.style.transform = 'translateY(0)';
+    }
+  });
+}, { threshold: 0.08 });
+
+document.querySelectorAll('.case-preview, .cred-item, .service-box, .stat-box, .for-situation-item, .case-full-card, .cert-tile').forEach(el => {
+  el.style.opacity = '0';
+  el.style.transform = 'translateY(16px)';
+  el.style.transition = 'opacity 0.5s ease, transform 0.5s ease, border-color 0.3s, background 0.3s, border-left-color 0.3s';
+  observer.observe(el);
+});
+</script>
+</body>
+</html>
